@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnessrou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/23 13:20:00 by tnessrou          #+#    #+#             */
-/*   Updated: 2021/04/23 13:20:04 by tnessrou         ###   ########.fr       */
+/*   Created: 2021/04/23 13:43:05 by tnessrou          #+#    #+#             */
+/*   Updated: 2021/04/23 13:43:08 by tnessrou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdlib.h>
-// #include <stdio.h>
-// #include <string.h>
 // #include <ctype.h>
+// #include <stdio.h>
 
-int	ft_isascii(int c)
+int	ft_toupper(int c)
 {
-	if ((c > -1) && (c < 128))
-		return (1);
-	return (0);
+	if ((c < 123) && (c > 96))
+		return (c - 32);
+	return (c);
 }
 
 // int main()
 // {
 // 	int t = 1;
-// 	for (int i = -10; i < 130; i++)
+// 	for (int i = -10; i < 160; i++)
 // 	{
-// 		t *= ft_isascii(i) == isascii(i);
+// 		t *= ft_toupper(i) == toupper(i);
 // 	}
 // 	printf("%d\n", t);
 //     // char *s1 = "fsfds";

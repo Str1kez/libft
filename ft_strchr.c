@@ -1,38 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnessrou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/23 13:20:00 by tnessrou          #+#    #+#             */
-/*   Updated: 2021/04/23 13:20:04 by tnessrou         ###   ########.fr       */
+/*   Created: 2021/04/23 15:06:37 by tnessrou          #+#    #+#             */
+/*   Updated: 2021/04/23 15:06:40 by tnessrou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdlib.h>
-// #include <stdio.h>
+#include <stdlib.h>
 // #include <string.h>
-// #include <ctype.h>
+// #include <stdio.h>
 
-int	ft_isascii(int c)
+char	*ft_strchr(const char *s, int c)
 {
-	if ((c > -1) && (c < 128))
-		return (1);
-	return (0);
+	while (*s)
+	{
+		if (c == *s)
+			return ((char *)s);
+		s++;
+	}
+	if (*s == '\0' && c == '\0')
+		return ((char *)s);
+	return (NULL);
 }
 
-// int main()
+// int	main()
 // {
+// 	char *s_src = "r43trgerbh5rebv";
+// 	// char c = 'a';
+// 	char *res, *res2;
+
 // 	int t = 1;
-// 	for (int i = -10; i < 130; i++)
+// 	for (int i = -10; i < 200; i++)
 // 	{
-// 		t *= ft_isascii(i) == isascii(i);
+// 		res = ft_strchr(s_src, i);
+// 		res2 = strchr(s_src, i);
+// 		t *= res == res2;
+// 		printf("%s\t", res);
+// 		printf("%s\n", res2);
 // 	}
+
 // 	printf("%d\n", t);
-//     // char *s1 = "fsfds";
-//     // char *s2 = "sfafs";
-//     // printf("%d\n", ft_strncmp(s1, s2, 1));
-//     // printf("%d", strncmp(s1, s2, 1));
-//     return (0);
 // }

@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tnessrou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/23 13:20:00 by tnessrou          #+#    #+#             */
-/*   Updated: 2021/04/23 13:20:04 by tnessrou         ###   ########.fr       */
+/*   Created: 2021/04/23 13:34:41 by tnessrou          #+#    #+#             */
+/*   Updated: 2021/04/23 13:34:45 by tnessrou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdlib.h>
 // #include <stdio.h>
-// #include <string.h>
 // #include <ctype.h>
 
-int	ft_isascii(int c)
+int	ft_isprint(int c)
 {
-	if ((c > -1) && (c < 128))
+	if ((c < 127) && (c > 31))
 		return (1);
 	return (0);
 }
@@ -27,7 +25,7 @@ int	ft_isascii(int c)
 // 	int t = 1;
 // 	for (int i = -10; i < 130; i++)
 // 	{
-// 		t *= ft_isascii(i) == isascii(i);
+// 		t *= ft_isprint(i) == isprint(i);
 // 	}
 // 	printf("%d\n", t);
 //     // char *s1 = "fsfds";
