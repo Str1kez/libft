@@ -19,6 +19,12 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	res;
 
 	res = 0;
+	if (!dstsize)
+	{
+		while (*src++)
+			res++;
+		return (res);
+	}
 	while (*src)
 	{
 		if (res < dstsize - 1)
@@ -35,16 +41,16 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 
 // int	main()
 // {
-// 	char *s_src = "wrw";
-// 	char buf[20];
-// 	char buf2[20];
-// 	size_t result;
+// 	char *str = "BBBB";
+// 	char buff1[0xF00];
+// 	char buff2[0xF00];
+// 	// size_t result;
 
-// 	result = ft_strlcpy(buf, s_src, sizeof(buf));
-// 	printf("%lu\n", result);
-// 	result = strlcpy(buf2, s_src, sizeof(buf2));
-// 	printf("%lu\n", result);
-// 	printf("%s\n", buf);
-// 	printf("%s\n", buf2);
-// 	printf("%d\n", strcmp(buf, buf2));
+// 	memset(buff1, 'A', 20);
+// 	memset(buff2, 'A', 20);
+// 	printf("%lu\n", strlcpy(buff1, str, 0));
+// 	printf("%s\n", buff1);
+// 	printf("%lu\n", ft_strlcpy(buff2, str, 0));
+// 	printf("%s\n", buff2);
+// 	return (0);
 // }

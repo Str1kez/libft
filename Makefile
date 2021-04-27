@@ -52,7 +52,9 @@ $(NAME).a: $(OBJS)
 clean:
 	rm -rf $(NAME).a
 
-fclean: clean $(OBJS)
+fclean: clean
 	rm -rf $(OBJS)
 
-.PHONY: all, clean, $(NAME), fclean
+re: fclean all	
+
+.PHONY: all, re, clean, $(NAME), fclean

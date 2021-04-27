@@ -16,25 +16,24 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	char	*help;
-	char	*save;
+	size_t	counter;
 
-	save = (char *)haystack;
-	help = (char *)needle;
-	while (haystack && (*haystack || (!*haystack && !*needle)) && len)
+	counter = 0;
+	if (!*needle)
+		return ((char *)haystack);
+	while ((*haystack || (!*haystack && !*needle)) && len)
 	{
-		if (*haystack == *help || !*help)
+		if (*haystack == *needle || !*needle)
 		{
-			save = (char *)haystack;
-			while (*haystack == *help && len && *haystack)
+			while (*haystack == *(needle + counter) && len && *haystack)
 			{
-				help++;
 				haystack++;
 				len--;
+				counter++;
 			}
-			if (!*help)
-				return (save);
-			help = (char *)needle;
+			if (!*(needle + counter))
+				return ((char *)(haystack - counter));
+			counter = 0;
 		}
 		haystack++;
 		if (len)
@@ -43,24 +42,13 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	return (NULL);
 }
 
-// TODO: NEED CHECK
-
 // int	main()
 // {
-// 	char *s_src = "djfafd";
-// 	char *needle = "";
-// 	// char *res, *res;
-
-// 	// int t = 1;
-// 	// for (int i = -10; i < 200; i++)
-// 	// {
-// 	// 	res = ft_strrchr(s_src, i);
-// 	// 	res2 = strrchr(s_src, i);
-// 	// 	t *= res == res2;
-// 	// 	printf("%s\t", res);
-// 	// 	printf("%s\n", res2);
-// 	// }
-// 	// printf("%d\n", t);
-// 	printf("%s\n", ft_strnstr(s_src, needle, 3));
-// 	printf("%s\n", strnstr(s_src, needle, 3));
+	// char *s1 = "oh no not the empty string !";
+	// char *s2 = "";
+	// size_t max = 1;
+	// char *i1 = strnstr(((void *)0), "fake", 3);
+	// char *i2 = ft_strnstr(((void *)0), "fake", 3);
+	// printf("%s\n", i1);
+	// printf("%s\n", i2);
 // }

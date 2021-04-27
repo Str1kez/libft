@@ -21,6 +21,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	help_dst = (unsigned char *) dst;
 	help_src = (unsigned char *) src;
+	if (!dst && !src)
+		return (NULL);
 	while (n)
 	{
 		*help_dst = *help_src;
@@ -33,14 +35,14 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 // int main()
 // {
-// 	char buf[20]; // = {'a', 'b', '1'};
-// 	char *str = "common";
-// 	// ft_memset(buf, '\0', 20);
-// 	printf("%p\n", memcpy(buf, str, 4));
-// 	printf("%s\n", buf);
-// 	ft_memcpy(buf, "", 20);
-// 	// printf("%p\n", ft_memcpy(buf, str, 3));
-// 	printf("%s\n", buf);
-// 	// ft_memset(buf, 52, 20);
-// 	// printf("%d\n", buf[0]);
+	// char buf[20]; // = {'a', 'b', '1'};
+	// char *str = "common";
+	// ft_memset(buf, '\0', 20);
+	// printf("%p\n", memcpy(buf, str, 4));
+	// printf("%s\n", buf);
+	// ft_memcpy(buf, "", 20);
+	// printf("%p\n", ft_memcpy((void *)0, (void *)0, 3));
+	// printf("%s\n", buf);
+	// ft_memset(buf, 52, 20);
+	// printf("%d\n", buf[0]);
 // }
