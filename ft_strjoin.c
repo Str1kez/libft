@@ -22,6 +22,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	iter;
 	char	*res;
 
+	if (!s1 || !s2)
+		return (NULL);
 	iter = 0;
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
@@ -33,10 +35,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		res[iter] = s1[iter];
 		iter++;
 	}
-	iter = 0;
-	while (iter < s2_len)
+	while (iter < s1_len + s2_len)
 	{
-		res[iter + s1_len] = s2[iter];
+		res[iter] = s2[iter - s1_len];
 		iter++;
 	}
 	res[s1_len + s2_len] = '\0';

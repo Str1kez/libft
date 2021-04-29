@@ -53,6 +53,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	rindex;
 	size_t	iter;
 
+	if (!s1 || !set)
+		return (NULL);
 	rindex = right_len(s1, set);
 	lindex = left_len(s1, set);
 	if (!rindex)
