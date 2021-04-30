@@ -13,7 +13,7 @@
 #include <stdlib.h>
 // #include <stdio.h>
 
-char	*duplicate(char const *start, char const *end)
+static char	*duplicate(char const *start, char const *end)
 {
 	size_t	size;
 	size_t	i;
@@ -41,7 +41,7 @@ char	*duplicate(char const *start, char const *end)
 	return (res);
 }
 
-char	*create_str(char const *s, char c, size_t iter)
+static char	*create_str(char const *s, char c, size_t iter)
 {
 	char const	*ptr;
 
@@ -64,7 +64,7 @@ char	*create_str(char const *s, char c, size_t iter)
 	return (duplicate(ptr, s));
 }
 
-size_t	word_count(char const *s, char c)
+static size_t	word_count(char const *s, char c)
 {
 	size_t	count;
 
