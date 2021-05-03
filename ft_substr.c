@@ -15,6 +15,13 @@
 // #include <string.h>
 // #include <stdio.h>
 
+static size_t	minimum(size_t len, size_t strlen)
+{
+	if (len < strlen)
+		return (len);
+	return (strlen);
+}
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char			*res;
@@ -23,7 +30,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	iter = start;
 	if (s && ft_strlen(s) > iter)
 	{
-		res = (char *)malloc(len + 1);
+		res = (char *)malloc(minimum(len, ft_strlen(s)) + 1);
 		if (!res)
 			return (NULL);
 		while (s[iter] && iter < len + start)

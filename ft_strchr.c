@@ -18,7 +18,7 @@ char	*ft_strchr(const char *s, int c)
 {
 	while (*s)
 	{
-		if (c == *s)
+		if ((char)c == *s)
 			return ((char *)s);
 		s++;
 	}
@@ -29,10 +29,8 @@ char	*ft_strchr(const char *s, int c)
 
 // int	main()
 // {
-// 	char *s_src = "r43trgerbh5rebv";
+// 	char s[] = "tripouille";
 // 	// char c = 'a';
-// 	char *res, *res2;
-
 // 	int t = 1;
 // 	for (int i = -10; i < 200; i++)
 // 	{
